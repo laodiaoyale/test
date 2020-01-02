@@ -16,8 +16,8 @@ public class HelloController {
     private Config config;
 
     @GetMapping("/hello")
-    public String hello() {
+    public String hello(String name) {
         System.out.println("线程池名称: " + Thread.currentThread().getName());
-        return config.getProperty("name", "default");
+        return config.getProperty(name, "未找到");
     }
 }
